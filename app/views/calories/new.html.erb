@@ -1,0 +1,19 @@
+<div class="new_content_wrapper">
+  <p class="new_news">本日のカロリーを入れてください</p> 
+
+  <div class="new__main">
+
+  <%= form_with(model: @calorie, local: true) do |form| %>
+    <p class="new__main__name">名前   <%= current_user.nickname%></p>
+    <p class="new__main__kcal">カロリー<small>(半角数字で記入)</small></p>
+    <div class="new__main__kcals">
+      <%= form.number_field :calorie_morning, placeholder: "朝のカロリー" %>
+      <%= form.number_field :calorie_lunch, placeholder: "お昼のカロリー" %>
+      <%= form.number_field :calorie_night, placeholder: "夜のカロリー" %>
+      <p class="new__main__comment">コメント</p>
+    </div>
+    <%= form.text_area :content, size: "70x10", rows: "5", class:"new__main__text" %>
+    <%= form.submit value="投稿する", class:"new__main__button" %>
+  <% end %>
+  </div>
+</div>

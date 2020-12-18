@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DoCalorie</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag '/assets/favicon.ico' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+  </head>
+
+  <body>
+  <div class="wrap">
+      <header class="header">
+        <h1 class="header__bar__id"><a href="/" class="header__item">DoCalorie</a></h1>
+        <% if user_signed_in? %>
+          <div class="group__log">
+            <p class="user_name"><%= current_user.nickname %></p>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "group__log__out"%>
+          </div>
+        <% else %>
+          <div class="group__log">
+            <%= link_to "ログイン", new_user_session_path, class: 'group__log__post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'group__log__new' %>
+          </div>
+        <% end %>
+      </header>
+
+    <%= yield %>
+  <!-- /.wrap --></div>
+  </body>
+</html>

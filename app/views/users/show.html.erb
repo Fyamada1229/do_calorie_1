@@ -1,0 +1,31 @@
+<div class="show__my">
+
+  <div class="show__my__page">
+
+  <% @calories.each do |calorie|%>
+  <% if user_signed_in? && current_user.id == calorie.user_id %>
+  <div class="show__user">
+    <div class="user__box">
+      <p>朝<%= calorie.calorie_morning.to_i %>kcal</p>
+      <p>お昼<%= calorie.calorie_lunch.to_i %>kcal</p> 
+      <p>夜<%= calorie.calorie_night.to_i %>kcal</p>
+      <div class="user__box__content"><%= simple_format(calorie.content, calss: "content_text") %></div>
+      <p class="main__menu__about__text__time"><%= calorie.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+    </div>
+    <div class="user__box2">
+      <ul class="show_list">
+        <li>
+        <% if user_signed_in? && current_user.id == calorie.user_id %>
+        <%= link_to '削除', "/calories/#{calorie.id}", method: :delete, class: "show_list__link",data: {confirm: "本当に削除しますか？"}%></li>
+        <li>
+        <%= link_to '編集', "/calories/#{calorie.id}/edit", method: :get, class: "show_list__link",data: {confirm: "編集しますか？"}%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  
+  <% end %>
+  <% end %>
+  
+  
+</div>

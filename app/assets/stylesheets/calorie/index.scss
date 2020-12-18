@@ -1,0 +1,222 @@
+.content_wrapper {
+  height: 800px;
+  width: 100%;
+  background-color: #f3f9fb;
+  padding-top: 30px;
+  display: flex;
+  margin: auto;
+}
+.wrap {
+  overflow: hidden;
+}
+
+// 左側
+.left__menu {
+  height: 650px;
+  width: 270px;
+  margin-left: 30px;
+  padding-bottom: 10px;
+  background-color: white; 
+  border: 2px solid #F2F2F2;
+}
+.my_page {
+  font-family: "Arial", "メイリオ";
+  font-size: 18px;
+  padding-left: 20px;
+  padding-top: 10px;
+  outline: none; // 青い枠消す
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  display:block;
+}
+.my_page:hover {
+  color:rgb(190, 185, 185);
+}
+
+// 真ん中
+.main__menu {
+  height: 650px;
+  width: 1040px;
+  &__about {
+    padding-left: 20px;
+    color:  #13b1c0;
+    padding-left: 100px;
+    margin-bottom: 10px;
+  }
+  &__text {
+    padding-left: 100px;
+    color: rgb(51, 51, 51);
+    margin-bottom: 20px;
+    overflow-y:scroll;
+  }
+}
+
+.main__menu__about__text {
+  height: 438px;
+  width: 650px;
+  background-color: white;
+  margin-left: 100px;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: 2px solid #F2F2F2;
+  overflow: scroll;
+  color: rgb(51, 51, 51);
+  &__time{
+    margin-bottom: 15px;
+  }
+  .more_list__link {
+    color: #0000FF;
+    
+  }
+  .more_list__link:hover {
+    text-decoration: none;
+  }
+}
+.more_list {
+  text-align: right;
+}
+
+//削除編集
+.box_name {
+  font-size: 16px;
+  display: flex;
+}
+.box_1 {
+  height: 54px;
+  margin: 0 0 0 auto;
+  padding-right: 20px;
+}
+.box_2 {
+  padding-left: 10px;
+}
+
+// 本日のカロリー入力ボタン
+.todo_kcal {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin-left: 100px;
+  text-decoration: none;
+  color: #FFF;
+  background: #13b1c0;
+  border: solid 1px #13b1c0;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+.todo_kcal:hover {
+  background-color: #FFF;
+  color: #13b1c0;
+}
+.todo_kcal:active {
+  /*押したとき*/
+  border: solid 2px #13b1c0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+
+//ログインしていない時
+.login__not {
+  height: 540px;
+  width: min(650px, 95vw);
+  background-color: white;
+  margin-left: 220px;
+  margin: auto;
+  &__main__login {
+    padding-top: 20px;
+    text-align: center;
+    color:  #13b1c0;
+    margin-top: 50px;
+  }
+  &__about__login {
+    text-align: center;
+    margin-top: 30px;
+    text-align: center;
+  }
+  &__before__sing {
+    text-align: center;
+    margin-top: 120px;
+  }
+}
+
+//ログインしていない時ボタン
+.login__not__about__login__id {
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+  padding-top: 8px;
+  text-decoration: none;
+  color: #FFF;
+  background: #13b1c0;
+  border: solid 1px #13b1c0;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  border-radius: 37px;
+  outline: none; // 青い枠消す
+}
+//ボタンを乗せている時
+.login__not__about__login__id:hover {
+  background-color: #FFF;
+  color: #13b1c0;
+}
+//ログインしていない時新規会員登録
+.login__not__before__sing__new {
+  color: rgb(51, 51, 51);
+  font-size: 19px;
+  text-decoration: none;
+  outline: none; // 青い枠消す
+}
+.login__not__before__sing__new:hover {
+  color:rgb(190, 185, 185);
+}
+// コンテントテキスト
+.content_text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  word-break: normal;
+  width:500px; 
+  height:100px;
+  overflow-y:scroll;
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+// iPhoneサイズ
+@media screen and (max-width: 480px){
+  .login__not {
+    margin-top: 45px;
+  }
+  .passworld_attention {
+    padding-top: 100px;
+  }
+}
+
+// iPadサイズ
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  body {
+    background-color: #f3f9fb;
+  }
+  .wrap {
+    height: 1050px;
+    background-color: #f3f9fb;
+  }
+  .content_wrapper{
+    padding-top: 20px;
+    height: 900px;
+  }
+  .header__bar__id {
+    padding:0;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .login__not {
+    height: 500px;
+  }
+}

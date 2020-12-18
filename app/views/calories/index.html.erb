@@ -1,0 +1,58 @@
+<div class="content_wrapper">
+  <%# ログインの時に表示 %>
+  <% if user_signed_in? %>
+  <div class="left__menu">
+  <% if user_signed_in? %>
+    <%= link_to 'マイページ',"/users/#{current_user.id}", class:"my_page" %>
+    <%= link_to 'カレンダー', "/users/#{current_user.id}/calendar", class:"my_page"%>
+  <% else %>
+  <p></p>
+  <% end %>
+  </div>
+  <div class="main__menu">
+    <h1 class="main__menu__about">一日のカロリーを<br>
+    シンプルに記録をつけよう
+    </h1>
+    <p class="main__menu__text"> 
+    シンプルに一日に取った摂取カロリーを計算ができるアプリです。
+    </p>
+    <%= link_to '本日のカロリー', new_calory_path, class: "todo_kcal"%>
+    <div class="main__menu__about__text">
+    <% @calories.each do |calorie| %>
+    <div class="box_name">
+        <div class="box_2">
+          <p><%= calorie.user.nickname%></p>
+          <p><%= calorie.calorie_morning.to_i + calorie.calorie_lunch.to_i + calorie.calorie_night.to_i %>kcal</p>
+          <div class="content_text"><%= simple_format(calorie.content, calss: "content_text") %></div>
+          <p class="main__menu__about__text__time"><%= calorie.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+        </div>
+        <div class="box_1">
+          <ul class="more_list">
+            <li>
+          <% if user_signed_in? && current_user.id == calorie.user_id %>
+            <%= link_to '削除', "/calories/#{calorie.id}", method: :delete, class: "more_list__link",data: {confirm: "本当に削除しますか？"}%></li>
+            <li>
+            <%= link_to '編集', "/calories/#{calorie.id}/edit", method: :get, class: "more_list__link",data: {confirm: "編集しますか？"}%></li>
+          <% end %>
+          </ul>
+        </div>
+    </div>
+
+    <% end %>
+
+    <%# ログインしていな時に表示 %>
+    <% else %>
+    <div class="login__not">
+      <h1 class="login__not__main__login">一日のカロリーを<br>簡単に記録つけよう</h1>
+      <div class="login__not__before__sing">
+        <%= link_to "新規登録", new_user_registration_path, class:"login__not__before__sing__new"%>
+      </div>
+      <div class="login__not__about__login">
+        <%= link_to "ログイン", new_user_session_path, class:"login__not__about__login__id" %>
+      </div>
+    </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

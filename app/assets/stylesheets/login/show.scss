@@ -1,0 +1,48 @@
+.show__my {
+  width: 100%;
+  height: 1400px;
+  background-color: #f3f9fb;
+  padding-top: 50px;
+  &__page{
+    width: 800px;
+    height: 1200px;
+    background-color: #FFF;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding-top:7px;
+    overflow: scroll;
+  }
+}
+
+//コンテンツの中身
+.show__user {
+  height: 300px;
+  width: 800px;
+  display: flex;
+}
+
+.user__box p {
+  display: inline-block;
+}
+.user__box {
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  &__content {
+    width:500px; 
+    height:200px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align:left;
+  }
+}
+.user__box2 {
+  margin-right: 40px;
+  margin-top: 40px;
+}
+.show_list__link {
+  color: #0000FF;
+}
+.show_list__link:hover {
+  text-decoration: none;
+}

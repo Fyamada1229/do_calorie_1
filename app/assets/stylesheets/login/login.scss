@@ -1,0 +1,124 @@
+.main {
+  background-color: #f3f9fb;
+  padding-top: 80px;
+  height: 800px;
+  max-width: 100%;
+  &__middle {
+    background-color: white;
+    width: min(660px, 98vw);
+    height: 590px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px;
+    &__login {
+      font-size: 28px;
+      color: #13b1c0;
+      padding-bottom: 10px;
+      font-family: "Arial", "メイリオ";
+    }
+    label {
+      color:#13b1c0;
+      font-size: 18px;
+      font-family: "Arial", "メイリオ";
+    }
+    input {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// ログインボタン
+.btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.btn-border {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #FFF;
+  background: #13b1c0;
+  border: solid 1px #13b1c0;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  border-radius: 20px;
+  outline: none; 
+}
+.btn-border:hover {
+  background-color: #FFF;
+  color: #13b1c0;
+}
+
+//新規登録
+.new_registration {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+.new_registration:hover {
+  color:rgb(190, 185, 185);
+}
+
+//パスワード忘れ
+.password_forgetting {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+.password_forgetting:hover {
+  color: rgb(190, 185, 185);
+}
+
+// iPhoneサイズ
+@media screen and (max-width: 480px){
+  .header__bar__id {
+    padding:0;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  .new_id {
+    padding-top: 20px;
+  }
+  .main {
+    height: 780px;
+  }
+  .main__middle {
+    padding: 0;
+  }
+  .main__middle__login {
+    padding-top: 60px;
+  }
+  //新規登録
+  .group__log {
+    margin: auto;
+    padding-left: 50px;
+    padding-top: 25px;
+  }
+}
+// iPadサイズ
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  .header__bar__id {
+    padding:0;
+    font-size: 33px;
+  }
+  .header__item {
+    padding-left: 20px;
+  }
+  .content_wrapper {
+      padding:0;
+    }
+  .login__not {
+      height: 500px;
+      margin-top: 150px;
+    }
+  .group__log {
+    margin: auto;
+    margin-right: 23px;
+    padding-left: 30px;
+    padding-top: 25px;
+  }
+}
+
+
